@@ -1,0 +1,8 @@
+const COLORS = {
+  BACKGROUND_COLOR: '#283550',
+  BORDER_COLOR: '#4F5B76',
+  WHITE_COLOR: '#FFFFFF',
+  PINK_COLOR: '#FD4C8A',
+};
+
+export default COLORS;
