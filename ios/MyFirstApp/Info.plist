@@ -72,19 +72,19 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
-  <key>CFBundleURLTypes</key>
-  <array>
-    <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>twitterkit-OEBY9EbkdHPbb2Jgcqp2jo8za</string>
-        </array>
-      </dict>
-    </array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>twitter</string>
-      <string>twitterauth</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-OEBY9EbkdHPbb2Jgcqp2jo8za</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>twitterauth</string>
+	</array>
 </dict>
 </plist>

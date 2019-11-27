@@ -47,12 +47,12 @@ export default class Dashboard extends Component {
     const { data } = this.state;
     return (
         <View style={{flex: 1}}>
-          <SafeAreaView style={{backgroundColor: 'red', flex: 0}} />
-          <SafeAreaView style={{flex: 1, backgroundColor: 'green'}}>
-            <View style={{flex: 0.05, justifyContent: 'center', alignItems: 'center',backgroundColor: 'blue'}}>
+          <SafeAreaView style={{backgroundColor: 'lightblue', flex: 0}} />
+          <SafeAreaView style={{flex: 1, backgroundColor: 'lightblue'}}>
+            <View style={{flex: 0.05, justifyContent: 'center', alignItems: 'center'}}>
               <LogoutIcon name={'logout'} color={'white'} size={20} onPress={this.signOutBtnPressed} style={{alignSelf: 'flex-end', marginRight: hp('2%')}}/>
             </View>
-            <View style={[styles.container, {flex: 0.95},{backgroundColor: 'green'}]}>
+            <View style={[styles.container, {flex: 0.95}]}>
               <FlatList
                   data={data}
                   renderItem={this.renderFlatListItem}
