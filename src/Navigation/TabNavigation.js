@@ -1,29 +1,28 @@
-import React, {Component} from 'react';
-import { Image, Text, TouchableOpacity } from 'react-native';
-
+import React from 'react';
+import { Image } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import HomeIcon from 'react-native-vector-icons/Entypo'
+import SearchIcon from 'react-native-vector-icons/AntDesign'
+import PlusIcon from 'react-native-vector-icons/AntDesign'
+import HeartIcon from 'react-native-vector-icons/AntDesign'
+import ProfileIcon from 'react-native-vector-icons/Feather'
+
 
 import InstaHomeScreen from '../Components/TabScreens/InstaHomeScreen'
 import InstaLoveScreen from '../Components/TabScreens/InstaLoveScreen'
 import InstaProfileScreen from '../Components/TabScreens/InstaProfileScreen'
 import InstaSearchScreen from '../Components/TabScreens/InstaSearchScreen'
 import InstaUploadItemsScreen from '../Components/TabScreens/InstaUploadItemsScreen'
+import COLORS from '../Constant/Colours';
 
 const HomeTab = createStackNavigator(
     {
         Home: InstaHomeScreen,
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#0091EA',
-            },
-           headerTintColor: '#fff',
-            title: 'Home Tab',
-
-        },
+        headerMode: 'none',
     }
 );
 
@@ -32,14 +31,7 @@ const LoveTab = createStackNavigator(
         Home: InstaLoveScreen,
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#0091EA',
-            },
-            headerTintColor: '#fff',
-            title: 'Love Tab',
-
-        },
+        headerMode: 'none',
     }
 );
 
@@ -48,14 +40,7 @@ const ProfileTab = createStackNavigator(
         Home: InstaProfileScreen,
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#0091EA',
-            },
-            headerTintColor: '#fff',
-            title: 'Profile Tab',
-
-        },
+        headerMode: 'none',
     }
 );
 const SearchTab = createStackNavigator(
@@ -63,14 +48,7 @@ const SearchTab = createStackNavigator(
         Home: InstaSearchScreen,
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#0091EA',
-            },
-            headerTintColor: '#fff',
-            title: 'Search Tab',
-
-        },
+        headerMode: 'none',
     }
 );
 
@@ -79,66 +57,47 @@ const UploadTab = createStackNavigator(
         Search: InstaUploadItemsScreen ,
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#0091EA',
-            },
-            headerTintColor: '#FFFFFF',
-            title: 'Upload Tab',
-
-        },
+        headerMode: 'none',
     }
 );
 
 const TabNavigation = createBottomTabNavigator(
     {
-    Home: HomeTab,
-    Search: SearchTab,
-    Upload: UploadTab,
-    Love: LoveTab,
-    Profile: ProfileTab
-},
+        Home: HomeTab,
+        Search: SearchTab,
+        Upload: UploadTab,
+        Love: LoveTab,
+        Profile: ProfileTab
+    },
     {
         defaultNavigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ focused, horizontal, tintColor }) => {
+            tabBarIcon: () => {
                 const { routeName } = navigation.state;
                 if (routeName === 'Home') {
                     return (
-                        <Image
-                            source={ require('../Assets/home_icon.png') }
-                            style={{ width: 20, height: 20, }} />
+                        <HomeIcon name="home" size={25} color={COLORS.BLACK_COLOR} />
                     );
                 } else if (routeName === 'Search') {
                     return (
-                        <Image
-                            source={ require('../Assets/search_icon.png') }
-                            style={{ width: 20, height: 20, }} />
+                        <SearchIcon name="search1" size={25} color={COLORS.BLACK_COLOR} />
                     );
                 } else if (routeName === 'Upload') {
                     return (
-                        <Image
-                            source={ require('../Assets/upload_icon.png') }
-                            style={{ width: 20, height: 20, }} />
+                        <PlusIcon name="plussquareo" size={25} color={COLORS.BLACK_COLOR} />
                     );
                 } else if (routeName === 'Love') {
                     return (
-                        <Image
-                            source={ require('../Assets/heart_icon.png') }
-                            style={{ width: 20, height: 20, }} />
+                        <HeartIcon name="hearto" size={25} color={COLORS.BLACK_COLOR} />
                     );
                 } else if (routeName === 'Profile') {
                     return (
-                        <Image
-                            source={ require('../Assets/profile_icon.png') }
-                            style={{ width: 20, height: 20, }} />
+                        <ProfileIcon name="user" size={25} color={COLORS.BLACK_COLOR} />
+
                     );
                 }
             },
         }),
-        tabBarOptions: {
-            activeTintColor: '#FF6F00',
-            inactiveTintColor: '#263238',
-        },
+        tabBarOptions: { showLabel: false }
     });
 
 export default createAppContainer(TabNavigation);

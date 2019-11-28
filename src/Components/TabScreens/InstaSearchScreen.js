@@ -5,12 +5,16 @@ import {
     StyleSheet,
 } from 'react-native';
 import COLORS from '../../Constant/Colours';
+import TopNavigationBar from '../../Common Components/TopNavigationBar';
 
 export default class InstaSearchScreen extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={{color: COLORS.WHITE_COLOR, fontSize:25}}>Search</Text>
+            <View style={{flex: 1, backgroundColor: 'lightyellow'}}>
+                <TopNavigationBar />
+                <View style={{flex: 1, justifyContent:'center', alignItems: 'center'}}>
+                    <Text style={{color: COLORS.BLACK_COLOR, fontSize:20}}>Search</Text>
+                </View>
             </View>
         );
     }

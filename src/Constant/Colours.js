@@ -3,6 +3,9 @@ const COLORS = {
   BORDER_COLOR: '#4F5B76',
   WHITE_COLOR: '#FFFFFF',
   PINK_COLOR: '#FD4C8A',
+  HEADER_COLOR: '#ededed',
+  BLACK_COLOR: '#000000',
+  BOTTOMLINE_COLOR: '#1D1D1E'
 };
 
 export default COLORS;
