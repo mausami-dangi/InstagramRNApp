@@ -73,10 +73,24 @@ const statusDataArray = [
 const newsFeedArray = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        name: 'Mausami',
-        image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
+        name: 'Kareena Kapoor Khan',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o2aPj0kBDkJV9hFQIjdqHu9qoJ_XEm6oRR8FWj-_h7vLi_3Ttg&s'
     },
-
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        name: 'Shrdhdha Kapoor',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5g1QZEZj3K33PuSaVQJS5XKCFcgCPTUzYzcIqHoCX3oJqHINX0w&s'
+    },
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        name: 'Dipika Padukon',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSawXwZitwVaWE08tMvELPGH8XvC3V9JiTg_CHZ3t4MKcEmWda_Zg&s'
+    },
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        name: 'Alia Bhatt',
+        image: 'https://i.pinimg.com/originals/2b/2f/cf/2b2fcfb02cf387d0b0ca6ce4ff788db8.jpg'
+    }
 ];
 
 export default class InstaHomeScreen extends Component {
@@ -91,32 +105,38 @@ export default class InstaHomeScreen extends Component {
                 </View>
                 <Text style={styles.headerStatusText}>{item.name}</Text>
             </View>
+
         );
     }
 
     renderNewsFeedFlatList = ({item}) => {
         return (
-
-                <View style={{height: hp('50%'), backgroundColor: 'red'}}>
-                    <View style={{flex: 0.12, backgroundColor: COLORS.BLACK_COLOR, alignItems: 'center', flexDirection: 'row'}}>
+                <View style={{height: hp('50%'), backgroundColor: COLORS.WHITE_COLOR}}>
+                    <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}}></View>
+                    <View style={{flex: 0.12, backgroundColor: COLORS.WHITE_COLOR, alignItems: 'center', flexDirection: 'row'}}>
                         <Image style={styles.profileIcon}
                                 source={{uri: item.image}}/>
-                        <Text style={{color: COLORS.WHITE_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
-                        <DotIcon name="dots-three-horizontal" color={COLORS.WHITE_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
+                        <Text style={{color: COLORS.BLACK_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
+                        <DotIcon name="dots-three-horizontal" color={COLORS.BLACK_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
                     </View>
-                    <View style={{flex: 0.65, backgroundColor: 'pink'}}>
+                    <View style={{flex: 0.65}}>
                         <Image style={{flex: 1}}
                                source={{uri: item.image}}/>
                     </View>
-                    <View style={{flex: 0.09, backgroundColor: 'blue', alignItems: 'center', flexDirection: 'row'}}>
-                        <HeartIcon name="hearto" color={COLORS.WHITE_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
-                        <CommentIcon name="comment" color={COLORS.WHITE_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-                        <SendIcon name="send" color={COLORS.WHITE_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
+                    <View style={{flex: 0.09, alignItems: 'center', flexDirection: 'row'}}>
+                        <HeartIcon name="hearto" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
+                        <CommentIcon name="comment" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
+                        <SendIcon name="send" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
 
-                        <DotIcon name="dots-three-horizontal" color={COLORS.WHITE_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
+                        <Image
+                            source={ require('../../Assets/save.png') }
+                            style={{ width: hp('5%'), height: hp('5%'), position: 'absolute', right: hp('1%')}} />
                     </View>
 
-                    <View style={{flex: 0.14, backgroundColor: 'green'}}/>
+                    <View style={{flex: 0.14}}>
+                        <Text style={{color: COLORS.BLACK_COLOR, fontSize: hp('1.8%'), marginLeft: hp('2%'), marginTop: hp('0.5%')}}>{'82,2011M Likes'}</Text>
+                        <Text style={{color: COLORS.BLACK_COLOR, fontSize: hp('1.5%'), marginLeft: hp('2%'), marginTop: hp('0.5%')}}>{'Comments Read More'}</Text>
+                    </View>
                 </View>
 
         );
