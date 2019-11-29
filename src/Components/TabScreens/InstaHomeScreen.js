@@ -12,7 +12,7 @@ import DotIcon from 'react-native-vector-icons/Entypo'
 import HeartIcon from 'react-native-vector-icons/AntDesign'
 import CommentIcon from 'react-native-vector-icons/Fontisto'
 import SendIcon from 'react-native-vector-icons/Feather';
-
+import SwiperFlatList from 'react-native-swiper-flatlist';
 
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
 
@@ -112,22 +112,38 @@ export default class InstaHomeScreen extends Component {
     renderNewsFeedFlatList = ({item}) => {
         return (
                 <View style={{height: hp('50%'), backgroundColor: COLORS.WHITE_COLOR}}>
-                    <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}}></View>
+                    <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}} />
                     <View style={{flex: 0.12, backgroundColor: COLORS.WHITE_COLOR, alignItems: 'center', flexDirection: 'row'}}>
                         <Image style={styles.profileIcon}
                                 source={{uri: item.image}}/>
                         <Text style={{color: COLORS.BLACK_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
                         <DotIcon name="dots-three-horizontal" color={COLORS.BLACK_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
                     </View>
-                    <View style={{flex: 0.65}}>
-                        <Image style={{flex: 1}}
-                               source={{uri: item.image}}/>
+                    <View style={{flex: 0.65, backgroundColor: 'red'}}>
+                        <SwiperFlatList
+                            showPagination>
+                            <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+                                <Image style={{flex: 1}}
+                                source={{uri: item.image}}/>
+                            </View>
+                            <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+                                <Image style={{flex: 1}}
+                                source={{uri: item.image}}/>
+                            </View>
+                            <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+                                <Image style={{flex: 1}}
+                                       source={{uri: item.image}}/>
+                            </View>
+                            <View style={[styles.child, { backgroundColor: 'teal' }]}>
+                                <Image style={{flex: 1}}
+                                       source={{uri: item.image}}/>
+                            </View>
+                        </SwiperFlatList>
                     </View>
                     <View style={{flex: 0.09, alignItems: 'center', flexDirection: 'row'}}>
                         <HeartIcon name="hearto" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
                         <CommentIcon name="comment" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
                         <SendIcon name="send" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-
                         <Image
                             source={ require('../../Assets/save.png') }
                             style={{ width: hp('5%'), height: hp('5%'), position: 'absolute', right: hp('1%')}} />
@@ -209,4 +225,14 @@ const styles = StyleSheet.create({
         margin: hp('1%')
 
     },
+
+    child: {
+        height: hp(33),
+        width: wp(100),
+        justifyContent: 'center'
+    },
+    textStyle: {
+        fontSize: wp(2),
+        textAlign: 'center'
+    }
 });
