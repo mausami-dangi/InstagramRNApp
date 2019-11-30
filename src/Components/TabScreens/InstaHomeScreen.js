@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    FlatList,
-    StyleSheet,
-    Image, TouchableOpacity,
-} from 'react-native';
+import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
 import COLORS from '../../Constant/Colours';
 import TopNavigationBar from '../../Common Components/TopNavigationBar'
 import DotIcon from 'react-native-vector-icons/Entypo'
@@ -13,7 +7,6 @@ import HeartIcon from 'react-native-vector-icons/AntDesign'
 import CommentIcon from 'react-native-vector-icons/Fontisto'
 import SendIcon from 'react-native-vector-icons/Feather';
 import SwiperFlatList from 'react-native-swiper-flatlist';
-
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
 
 const statusDataArray = [
@@ -111,67 +104,72 @@ export default class InstaHomeScreen extends Component {
 
     renderNewsFeedFlatList = ({item}) => {
         return (
-                <View style={{height: hp('50%'), backgroundColor: COLORS.WHITE_COLOR}}>
-                    <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}} />
-                    <View style={{flex: 0.12, backgroundColor: COLORS.WHITE_COLOR, alignItems: 'center', flexDirection: 'row'}}>
-                        <Image style={styles.profileIcon}
-                                source={{uri: item.image}}/>
-                        <Text style={{color: COLORS.BLACK_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
-                        <DotIcon name="dots-three-horizontal" color={COLORS.BLACK_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
-                    </View>
-                    <View style={{flex: 0.65, backgroundColor: 'red'}}>
-                        <SwiperFlatList
-                            showPagination>
-                            <View style={[styles.child, { backgroundColor: 'tomato' }]}>
-                                <Image style={{flex: 1}}
-                                source={{uri: item.image}}/>
-                            </View>
-                            <View style={[styles.child, { backgroundColor: 'thistle' }]}>
-                                <Image style={{flex: 1}}
-                                source={{uri: item.image}}/>
-                            </View>
-                            <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
-                                <Image style={{flex: 1}}
-                                       source={{uri: item.image}}/>
-                            </View>
-                            <View style={[styles.child, { backgroundColor: 'teal' }]}>
-                                <Image style={{flex: 1}}
-                                       source={{uri: item.image}}/>
-                            </View>
-                        </SwiperFlatList>
-                    </View>
-                    <View style={{flex: 0.09, alignItems: 'center', flexDirection: 'row'}}>
-                        <HeartIcon name="hearto" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
-                        <CommentIcon name="comment" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-                        <SendIcon name="send" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-                        <Image
-                            source={ require('../../Assets/save.png') }
-                            style={{ width: hp('5%'), height: hp('5%'), position: 'absolute', right: hp('1%')}} />
-                    </View>
-
-                    <View style={{flex: 0.14}}>
-                        <Text style={{color: COLORS.BLACK_COLOR, fontSize: hp('1.8%'), marginLeft: hp('2%'), marginTop: hp('0.5%')}}>{'82,2011M Likes'}</Text>
-                        <Text style={{color: COLORS.BLACK_COLOR, fontSize: hp('1.5%'), marginLeft: hp('2%'), marginTop: hp('0.5%')}}>{'Comments Read More'}</Text>
-                    </View>
+            <View style={{height: hp('50%'), backgroundColor: COLORS.WHITE_COLOR}}>
+                <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}} />
+                <View style={styles.newsFeedHeaderContainer}>
+                    <Image style={styles.profileIcon}
+                           source={{uri: item.image}}/>
+                    <Text style={{color: COLORS.BLACK_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
+                    <DotIcon name="dots-three-horizontal" color={COLORS.BLACK_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
                 </View>
+                <View style={{flex: 0.65}}>
+                    <SwiperFlatList
+                        onMomentumScrollEnd={() => console.log()}
+                        showPagination
+                        paginationStyleItem={{height: hp('1'), width: hp('1')}}>
+                        <View style={[styles.child]}>
+                            <Image style={{flex: 1}}
+                                   source={{uri: item.image}}/>
+                        </View>
+                        <View style={[styles.child]}>
+                            <Image style={{flex: 1}}
+                                   source={{uri: item.image}}/>
+                        </View>
+                        <View style={[styles.child]}>
+                            <Image style={{flex: 1}}
+                                   source={{uri: item.image}}/>
+                        </View>
+                        <View style={[styles.child]}>
+                            <Image style={{flex: 1}}
+                                   source={{uri: item.image}}/>
+                        </View>
+                    </SwiperFlatList>
+                </View>
+                <View style={styles.newsFeedCommentContainer}>
+                    <HeartIcon name="hearto" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
+                    <CommentIcon name="comment" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
+                    <SendIcon name="send" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
+                    <Image
+                        source={ require('../../Assets/save.png') }
+                        style={{ width: hp('5%'), height: hp('5%'), position: 'absolute', right: hp('1%')}} />
+                </View>
+                <View style={{flex: 0.14}}>
+                    <Text style={styles.commentTextStyle}>{'82,2011M Likes'}</Text>
+                    <Text style={styles.commentTextStyle}>{'Comments Read More'}</Text>
+                </View>
+            </View>
 
         );
     }
 
+    onMomentumScrollEnd = (event, state, context) =>{
+        console.log(state, context.state)
+    }
     render() {
         return (
             <View style={{flex: 1, backgroundColor: COLORS.WHITE_COLOR}}>
                 <TopNavigationBar />
                 <View style={{flex: 0.12, backgroundColor: COLORS.HEADER_COLOR}}>
                     <FlatList horizontal={true}
+                              showsHorizontalScrollIndicator={false}
                               data={statusDataArray}
                               renderItem={this.renderHeaderStatusFlatList}
                     />
                 </View>
-                <View style={{flex: 0.75, backgroundColor: COLORS.BACKGROUND_COLOR}}>
+                <View style={{flex: 0.75}}>
                     <FlatList
-                              data={newsFeedArray}
-                              renderItem={this.renderNewsFeedFlatList}
+                        data={newsFeedArray}
+                        renderItem={this.renderNewsFeedFlatList}
                     />
                 </View>
             </View>
@@ -184,7 +182,6 @@ export default class InstaHomeScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.BACKGROUND_COLOR,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -225,7 +222,23 @@ const styles = StyleSheet.create({
         margin: hp('1%')
 
     },
-
+    newsFeedHeaderContainer: {
+        flex: 0.12,
+        backgroundColor: COLORS.WHITE_COLOR,
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
+    newsFeedCommentContainer: {
+        flex: 0.09,
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
+    commentTextStyle: {
+        color: COLORS.BLACK_COLOR,
+        fontSize: hp('1.8%'),
+        marginLeft: hp('2%'),
+        marginTop: hp('0.5%')
+    },
     child: {
         height: hp(33),
         width: wp(100),
