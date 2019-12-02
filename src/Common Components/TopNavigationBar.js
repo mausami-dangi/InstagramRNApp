@@ -7,7 +7,6 @@ import {
     SafeAreaView,
 } from 'react-native';
 import {
-    widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import CameraIcon from 'react-native-vector-icons/Feather';

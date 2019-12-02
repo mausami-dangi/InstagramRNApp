@@ -6,6 +6,7 @@ const COLORS = {
   HEADER_COLOR: '#F9F9F9',
   BLACK_COLOR: '#000000',
   BOTTOMLINE_COLOR: '#1D1D1E',
+  GRAY_COLOR : '#EDEDED'
 };
 
 export default COLORS;

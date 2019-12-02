@@ -33,7 +33,6 @@ export default class Dashboard extends Component {
   }
 
   signOutBtnPressed = () => {
-
     FirebaseApp.auth().signOut()
         .then(this.props.navigation.navigate('Login'))
         .catch(error => alert(error.message))
@@ -55,8 +54,7 @@ export default class Dashboard extends Component {
             <View style={[styles.container, {flex: 0.95}]}>
               <FlatList
                   data={data}
-                  renderItem={this.renderFlatListItem}
-              />
+                  renderItem={this.renderFlatListItem} />
             </View>
           </SafeAreaView>
         </View>

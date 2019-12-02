@@ -19,9 +19,7 @@ const MainNavigator = createStackNavigator({
         navigationOptions: {
             headerVisible: false,
         },
-
-
-    });
+});
 
 const AppNavigator = createAppContainer(MainNavigator);
 export default AppNavigator;

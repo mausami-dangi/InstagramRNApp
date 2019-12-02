@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -8,8 +7,6 @@ import SearchIcon from 'react-native-vector-icons/AntDesign'
 import PlusIcon from 'react-native-vector-icons/AntDesign'
 import HeartIcon from 'react-native-vector-icons/AntDesign'
 import ProfileIcon from 'react-native-vector-icons/Feather'
-
-
 import InstaHomeScreen from '../Components/TabScreens/InstaHomeScreen'
 import InstaLoveScreen from '../Components/TabScreens/InstaLoveScreen'
 import InstaProfileScreen from '../Components/TabScreens/InstaProfileScreen'
@@ -23,6 +20,7 @@ const HomeTab = createStackNavigator(
     },
     {
         headerMode: 'none',
+
     }
 );
 
@@ -43,6 +41,7 @@ const ProfileTab = createStackNavigator(
         headerMode: 'none',
     }
 );
+
 const SearchTab = createStackNavigator(
     {
         Home: InstaSearchScreen,
@@ -63,41 +62,41 @@ const UploadTab = createStackNavigator(
 
 const TabNavigation = createBottomTabNavigator(
     {
-        Home: HomeTab,
+        // Home: HomeTab,
         Search: SearchTab,
+        Home: HomeTab,
         Upload: UploadTab,
         Love: LoveTab,
         Profile: ProfileTab
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
-            tabBarIcon: () => {
+            tabBarIcon: ({tintColor}) => {
                 const { routeName } = navigation.state;
                 if (routeName === 'Home') {
                     return (
-                        <HomeIcon name="home" size={25} color={COLORS.BLACK_COLOR} />
+                        <HomeIcon name="home" size={25} color={tintColor} />
                     );
                 } else if (routeName === 'Search') {
                     return (
-                        <SearchIcon name="search1" size={25} color={COLORS.BLACK_COLOR} />
+                        <SearchIcon name="search1" size={25} color={tintColor} />
                     );
                 } else if (routeName === 'Upload') {
                     return (
-                        <PlusIcon name="plussquareo" size={25} color={COLORS.BLACK_COLOR} />
+                        <PlusIcon name="plussquareo" size={25} color={tintColor} />
                     );
                 } else if (routeName === 'Love') {
                     return (
-                        <HeartIcon name="hearto" size={25} color={COLORS.BLACK_COLOR} />
+                        <HeartIcon name="hearto" size={25} color={tintColor} />
                     );
                 } else if (routeName === 'Profile') {
                     return (
-                        <ProfileIcon name="user" size={25} color={COLORS.BLACK_COLOR} />
-
+                        <ProfileIcon name="user" size={25} color={tintColor} />
                     );
                 }
             },
         }),
-        tabBarOptions: { showLabel: false }
-    });
+        tabBarOptions: { showLabel: false, activeTintColor:'darkblack',}
+});
 
 export default createAppContainer(TabNavigation);

@@ -9,77 +9,62 @@ import SendIcon from 'react-native-vector-icons/Feather';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
 
-const statusDataArray = [
-    {
+const statusDataArray = [{
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Mausami',
         image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
-    },
-    {
+    }, {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         name: 'Kalgi',
         image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
-    },
-    {
+    }, {
         id: '58694a0f-3da1-471f-bd96-145571e29d72',
         name: 'Priya',
         image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
         name: 'Janvi',
         image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
-    },
-    {
+    }, {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
         name: 'Suhagi',
         image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Mausami',
         image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
-    },
-    {
+    }, {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
         name: 'Kalgi',
         image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
-    },
-    {
+    }, {
         id: '58694a0f-3da1-471f-bd96-145571e29d72',
         name: 'Priya',
         image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
         name: 'Janvi',
         image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
-    },
-    {
+    }, {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
         name: 'Suhagi',
         image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
-    },
-
+    }
 ];
 
-const newsFeedArray = [
-    {
+const newsFeedArray = [{
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Kareena Kapoor Khan',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o2aPj0kBDkJV9hFQIjdqHu9qoJ_XEm6oRR8FWj-_h7vLi_3Ttg&s'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Shrdhdha Kapoor',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5g1QZEZj3K33PuSaVQJS5XKCFcgCPTUzYzcIqHoCX3oJqHINX0w&s'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Dipika Padukon',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSawXwZitwVaWE08tMvELPGH8XvC3V9JiTg_CHZ3t4MKcEmWda_Zg&s'
-    },
-    {
+    }, {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Alia Bhatt',
         image: 'https://i.pinimg.com/originals/2b/2f/cf/2b2fcfb02cf387d0b0ca6ce4ff788db8.jpg'
@@ -93,12 +78,10 @@ export default class InstaHomeScreen extends Component {
                 <View style={styles.headerStatusView}>
                     <Image
                         style={styles.profileImageView}
-                        source={{uri: item.image}}
-                    />
+                        source={{uri: item.image}} />
                 </View>
                 <Text style={styles.headerStatusText}>{item.name}</Text>
             </View>
-
         );
     }
 
@@ -148,13 +131,9 @@ export default class InstaHomeScreen extends Component {
                     <Text style={styles.commentTextStyle}>{'Comments Read More'}</Text>
                 </View>
             </View>
-
         );
     }
 
-    onMomentumScrollEnd = (event, state, context) =>{
-        console.log(state, context.state)
-    }
     render() {
         return (
             <View style={{flex: 1, backgroundColor: COLORS.WHITE_COLOR}}>
@@ -163,8 +142,7 @@ export default class InstaHomeScreen extends Component {
                     <FlatList horizontal={true}
                               showsHorizontalScrollIndicator={false}
                               data={statusDataArray}
-                              renderItem={this.renderHeaderStatusFlatList}
-                    />
+                              renderItem={this.renderHeaderStatusFlatList} />
                 </View>
                 <View style={{flex: 0.75}}>
                     <FlatList
@@ -173,8 +151,6 @@ export default class InstaHomeScreen extends Component {
                     />
                 </View>
             </View>
-
-
         );
     }
 }
@@ -220,7 +196,6 @@ const styles = StyleSheet.create({
         borderWidth: hp('0.3%'),
         borderColor: COLORS.HEADER_COLOR,
         margin: hp('1%')
-
     },
     newsFeedHeaderContainer: {
         flex: 0.12,

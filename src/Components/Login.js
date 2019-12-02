@@ -221,8 +221,6 @@ const styles = StyleSheet.create({
     },
     signUpButtonView: {
         alignItems: 'center',
-        // position: 'absolute',
-        // bottom: hp('2%'),
         justifyContent: 'center',
     },
     buttonText: {
