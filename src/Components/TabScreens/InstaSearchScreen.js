@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, FlatList, StyleSheet, Image, SafeAreaView, TouchableOpacity, TextInput} from 'react-native';
 import COLORS from '../../Constant/Colours';
-import TopNavigationBar from '../../Common Components/TopNavigationBar'
-import DotIcon from 'react-native-vector-icons/Entypo'
-import HeartIcon from 'react-native-vector-icons/AntDesign'
 import InstagramIcon from 'react-native-vector-icons/AntDesign'
 import SearchIcon from 'react-native-vector-icons/AntDesign'
-import CommentIcon from 'react-native-vector-icons/Fontisto'
-import SendIcon from 'react-native-vector-icons/Feather';
-import SwiperFlatList from 'react-native-swiper-flatlist';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
 
-const statusDataArray = [{
+const statusDataArray = [
+{
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'IGTV',
     image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
@@ -52,9 +47,9 @@ const statusDataArray = [{
     name: 'Music',
     image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
 }, {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
-        name: 'Sports',
-        image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+    name: 'Sports',
+    image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
 }, {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
     name: 'Comics',
@@ -67,10 +62,10 @@ const statusDataArray = [{
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
     name: 'Humor',
     image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
-}
-];
+}];
 
-const newsFeedArray = [{
+const newsFeedArray = [
+{
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'Kareena Kapoor Khan',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o2aPj0kBDkJV9hFQIjdqHu9qoJ_XEm6oRR8FWj-_h7vLi_3Ttg&s'
@@ -86,8 +81,7 @@ const newsFeedArray = [{
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'Alia Bhatt',
     image: 'https://i.pinimg.com/originals/2b/2f/cf/2b2fcfb02cf387d0b0ca6ce4ff788db8.jpg'
-}
-];
+}];
 
 export default class InstaHomeScreen extends Component {
     renderHeaderStatusFlatList = ({item}) => {
@@ -104,7 +98,6 @@ export default class InstaHomeScreen extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: COLORS.HEADER_COLOR}}>
-
                 <View style={{flex: 0.14}}>
                     <SafeAreaView style={{backgroundColor: COLORS.HEADER_COLOR, flex: 0}} />
                     <View style={{flex: 8.5, flexDirection: 'row'}}>
@@ -120,7 +113,7 @@ export default class InstaHomeScreen extends Component {
                             }}>
                                 <SearchIcon name="search1" size={18} color={COLORS.BLACK_COLOR} style={{margin: hp(1)}} />
                                 <TextInput
-                                    style={{flex: 1}}
+                                    style={{flex: 1, fontSize: hp(2)}}
                                     placeholder={'Search'}
                                     placeholderTextColor={COLORS.BLACK_COLOR}
                                 />
@@ -128,7 +121,7 @@ export default class InstaHomeScreen extends Component {
                         </View>
 
                         <View style={{flex: 1.5, justifyContent: 'center', alignItems: 'center'}}>
-                                <InstagramIcon name="instagram" size={30} color={COLORS.BLACK_COLOR} />
+                            <InstagramIcon name="instagram" size={30} color={COLORS.BLACK_COLOR} />
                         </View>
 
                     </View>
