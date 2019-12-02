@@ -13,43 +13,59 @@ import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-nativ
 
 const statusDataArray = [{
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Mausami',
+    name: 'IGTV',
     image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
 }, {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    name: 'Kalgi',
+    name: 'Shop',
     image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
 }, {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    name: 'Priya',
+    name: 'Decor',
     image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
 }, {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
-    name: 'Janvi',
+    name: 'TV & Movies',
     image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
 }, {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
-    name: 'Suhagi',
+    name: 'Nature',
     image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
 }, {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Mausami',
+    name: 'Travel',
     image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
 }, {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    name: 'Kalgi',
+    name: 'Food',
     image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
 }, {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    name: 'Priya',
+    name: 'Science & Tech',
     image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
 }, {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
-    name: 'Janvi',
+    name: 'Style',
     image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
 }, {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
-    name: 'Suhagi',
+    name: 'Music',
+    image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
+}, {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+        name: 'Sports',
+        image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
+}, {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+    name: 'Comics',
+    image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
+}, {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+    name: 'DIY',
+    image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
+}, {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+    name: 'Humor',
     image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
 }
 ];
@@ -78,59 +94,8 @@ export default class InstaHomeScreen extends Component {
         return (
             <View style={styles.headerStatusContainerView}>
                 <View style={styles.headerStatusView}>
-                    <Image
-                        style={styles.profileImageView}
-                        source={{uri: item.image}} />
-                </View>
-                <Text style={styles.headerStatusText}>{item.name}</Text>
-            </View>
-        );
-    }
-
-    renderNewsFeedFlatList = ({item}) => {
-        return (
-            <View style={{height: hp('50%'), backgroundColor: COLORS.WHITE_COLOR}}>
-                <View style={{height: hp(0.1),backgroundColor: COLORS.BACKGROUND_COLOR}} />
-                <View style={styles.newsFeedHeaderContainer}>
-                    <Image style={styles.profileIcon}
-                           source={{uri: item.image}}/>
-                    <Text style={{color: COLORS.BLACK_COLOR, marginHorizontal: hp('1.5%')}}>{item.name}</Text>
-                    <DotIcon name="dots-three-horizontal" color={COLORS.BLACK_COLOR} size={hp('2%')} style={{position: 'absolute', right: hp('1%')}} />
-                </View>
-                <View style={{flex: 0.65}}>
-                    <SwiperFlatList
-                        onMomentumScrollEnd={() => console.log()}
-                        showPagination
-                        paginationStyleItem={{height: hp('1'), width: hp('1')}}>
-                        <View style={[styles.child]}>
-                            <Image style={{flex: 1}}
-                                   source={{uri: item.image}}/>
-                        </View>
-                        <View style={[styles.child]}>
-                            <Image style={{flex: 1}}
-                                   source={{uri: item.image}}/>
-                        </View>
-                        <View style={[styles.child]}>
-                            <Image style={{flex: 1}}
-                                   source={{uri: item.image}}/>
-                        </View>
-                        <View style={[styles.child]}>
-                            <Image style={{flex: 1}}
-                                   source={{uri: item.image}}/>
-                        </View>
-                    </SwiperFlatList>
-                </View>
-                <View style={styles.newsFeedCommentContainer}>
-                    <HeartIcon name="hearto" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('1.5%')}} />
-                    <CommentIcon name="comment" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-                    <SendIcon name="send" color={COLORS.BLACK_COLOR} size={hp('2.5%')} style={{marginLeft: hp('2%')}}/>
-                    <Image
-                        source={ require('../../Assets/save.png') }
-                        style={{ width: hp('5%'), height: hp('5%'), position: 'absolute', right: hp('1%')}} />
-                </View>
-                <View style={{flex: 0.14}}>
-                    <Text style={styles.commentTextStyle}>{'82,2011M Likes'}</Text>
-                    <Text style={styles.commentTextStyle}>{'Comments Read More'}</Text>
+                    <SearchIcon name="search1" size={15} color={COLORS.BLACK_COLOR} style={{marginLeft: hp(1)}} />
+                    <Text style={{marginLeft: hp(1), marginRight: hp(1)}}>{item.name}</Text>
                 </View>
             </View>
         );
@@ -139,6 +104,7 @@ export default class InstaHomeScreen extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: COLORS.HEADER_COLOR}}>
+
                 <View style={{flex: 0.14}}>
                     <SafeAreaView style={{backgroundColor: COLORS.HEADER_COLOR, flex: 0}} />
                     <View style={{flex: 8.5, flexDirection: 'row'}}>
@@ -150,7 +116,7 @@ export default class InstaHomeScreen extends Component {
                                 flexDirection: 'row',
                                 alignItems: 'center',
                                 marginLeft: hp(1),
-                                marginVertical: hp(1)
+                                marginVertical: hp(0.8)
                             }}>
                                 <SearchIcon name="search1" size={18} color={COLORS.BLACK_COLOR} style={{margin: hp(1)}} />
                                 <TextInput
@@ -166,27 +132,16 @@ export default class InstaHomeScreen extends Component {
                         </View>
 
                     </View>
-                    <View style={{height: hp('0.1%'), backgroundColor: COLORS.BOTTOMLINE_COLOR}} />
                 </View>
 
-
-
-
-
-
-
-                <View style={{flex: 0.12, backgroundColor: COLORS.HEADER_COLOR}}>
+                <View style={{flex: 0.07, backgroundColor: COLORS.HEADER_COLOR}}>
                     <FlatList horizontal={true}
                               showsHorizontalScrollIndicator={false}
                               data={statusDataArray}
                               renderItem={this.renderHeaderStatusFlatList} />
                 </View>
-                <View style={{flex: 0.75}}>
-                    <FlatList
-                        data={newsFeedArray}
-                        renderItem={this.renderNewsFeedFlatList}
-                    />
-                </View>
+
+                <View style={{flex: 0.79, backgroundColor: COLORS.BLACK_COLOR}} />
             </View>
         );
     }
@@ -201,18 +156,16 @@ const styles = StyleSheet.create({
     headerStatusContainerView: {
         flex: 1,
         justifyContent: 'center',
-        marginHorizontal: hp('0.1%'),
         alignItems: 'center',
     },
     headerStatusView: {
-        height: hp('6.5%'),
-        width: hp('6.5%'),
-        borderRadius: hp('6.5%'),
+        height: hp('4.5%'),
         marginHorizontal: hp('0.5%'),
         borderWidth: hp('0.3%'),
         borderColor: COLORS.BORDER_COLOR,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: hp(1)
     },
     profileIcon: {
         height: hp('4.5%'),
