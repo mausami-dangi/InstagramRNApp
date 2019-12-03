@@ -62,9 +62,8 @@ const UploadTab = createStackNavigator(
 
 const TabNavigation = createBottomTabNavigator(
     {
-        // Home: HomeTab,
-        Search: SearchTab,
         Home: HomeTab,
+        Search: SearchTab,
         Upload: UploadTab,
         Love: LoveTab,
         Profile: ProfileTab

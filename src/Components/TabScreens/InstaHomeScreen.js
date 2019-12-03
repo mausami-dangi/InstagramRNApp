@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
+import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import COLORS from '../../Constant/Colours';
-import TopNavigationBar from '../../Common Components/TopNavigationBar'
-import DotIcon from 'react-native-vector-icons/Entypo'
-import HeartIcon from 'react-native-vector-icons/AntDesign'
-import CommentIcon from 'react-native-vector-icons/Fontisto'
+import TopNavigationBar from '../../Common Components/TopNavigationBar';
+import DotIcon from 'react-native-vector-icons/Entypo';
+import HeartIcon from 'react-native-vector-icons/AntDesign';
+import CommentIcon from 'react-native-vector-icons/Fontisto';
 import SendIcon from 'react-native-vector-icons/Feather';
 import SwiperFlatList from 'react-native-swiper-flatlist';
-import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
+import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
-const statusDataArray = [{
+const statusDataArray = [
+    {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Mausami',
         image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
@@ -52,7 +53,8 @@ const statusDataArray = [{
     }
 ];
 
-const newsFeedArray = [{
+const newsFeedArray = [
+    {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
         name: 'Kareena Kapoor Khan',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o2aPj0kBDkJV9hFQIjdqHu9qoJ_XEm6oRR8FWj-_h7vLi_3Ttg&s'
@@ -72,6 +74,17 @@ const newsFeedArray = [{
 ];
 
 export default class InstaHomeScreen extends Component {
+    renderListHeaderComponent = () => {
+        return(
+            <View style={{flex: 0.12, backgroundColor: COLORS.HEADER_COLOR, marginVertical: hp(0.5)}}>
+                <FlatList horizontal={true}
+                          showsHorizontalScrollIndicator={false}
+                          data={statusDataArray}
+                          renderItem={this.renderHeaderStatusFlatList} />
+            </View>
+        );
+    }
+
     renderHeaderStatusFlatList = ({item}) => {
         return (
             <View style={styles.headerStatusContainerView}>
@@ -138,17 +151,11 @@ export default class InstaHomeScreen extends Component {
         return (
             <View style={{flex: 1, backgroundColor: COLORS.WHITE_COLOR}}>
                 <TopNavigationBar />
-                <View style={{flex: 0.12, backgroundColor: COLORS.HEADER_COLOR}}>
-                    <FlatList horizontal={true}
-                              showsHorizontalScrollIndicator={false}
-                              data={statusDataArray}
-                              renderItem={this.renderHeaderStatusFlatList} />
-                </View>
-                <View style={{flex: 0.75}}>
+                <View style={{flex: 0.87}}>
                     <FlatList
+                        ListHeaderComponent={this.renderListHeaderComponent}
                         data={newsFeedArray}
-                        renderItem={this.renderNewsFeedFlatList}
-                    />
+                        renderItem={this.renderNewsFeedFlatList}/>
                 </View>
             </View>
         );
