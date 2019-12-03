@@ -11,43 +11,43 @@ import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-nativ
 
 const statusDataArray = [
     {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '001',
         name: 'Mausami',
         image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
     }, {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        id: '002',
         name: 'Kalgi',
         image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
     }, {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
+        id: '003',
         name: 'Priya',
         image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
+        id: '004',
         name: 'Janvi',
         image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
     }, {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+        id: '005',
         name: 'Suhagi',
         image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '006',
         name: 'Mausami',
         image: 'https://thumbs.dreamstime.com/z/lady-isolated-bright-background-happy-student-white-blouse-professional-lady-excited-girl-success-concept-smiling-96471759.jpg'
     }, {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        id: '007',
         name: 'Kalgi',
         image: 'https://lh6.googleusercontent.com/-Tg5Xvb5MZws/AAAAAAAAAAI/AAAAAAAAE00/JA2nKK6zIwc/photo.jpg'
     }, {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
+        id: '008',
         name: 'Priya',
         image: 'https://mcmscache.epapr.in/post_images/website_197/post_12824851/thumb.jpg'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
+        id: '009',
         name: 'Janvi',
         image: 'https://st1.bollywoodlife.com/wp-content/uploads/2018/07/Jhanvi-kapoor-bio-wiki.jpg'
     }, {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f61',
+        id: '010',
         name: 'Suhagi',
         image: 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/kareena-kapoor-khan-1151-26-07-2018-11-14-31.jpg'
     }
@@ -55,19 +55,19 @@ const statusDataArray = [
 
 const newsFeedArray = [
     {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '001',
         name: 'Kareena Kapoor Khan',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5o2aPj0kBDkJV9hFQIjdqHu9qoJ_XEm6oRR8FWj-_h7vLi_3Ttg&s'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '002',
         name: 'Shrdhdha Kapoor',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5g1QZEZj3K33PuSaVQJS5XKCFcgCPTUzYzcIqHoCX3oJqHINX0w&s'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '004',
         name: 'Dipika Padukon',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSawXwZitwVaWE08tMvELPGH8XvC3V9JiTg_CHZ3t4MKcEmWda_Zg&s'
     }, {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        id: '005',
         name: 'Alia Bhatt',
         image: 'https://i.pinimg.com/originals/2b/2f/cf/2b2fcfb02cf387d0b0ca6ce4ff788db8.jpg'
     }
