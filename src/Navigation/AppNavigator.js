@@ -11,7 +11,7 @@ const MainNavigator = createStackNavigator({
         SignUp: {screen: SignUp},
         Dashboard: {screen: Dashboard},
         TabNavigation: {screen: TabNavigation},
-        TopNavigationBar: {screen: TopNavigationBar}
+        TopNavigationBar: {screen: TopNavigationBar},
     },
     {
         initialRouteName: 'TabNavigation',

@@ -12,7 +12,6 @@ import InstaLoveScreen from '../Components/TabScreens/InstaLoveScreen'
 import InstaProfileScreen from '../Components/TabScreens/InstaProfileScreen'
 import InstaSearchScreen from '../Components/TabScreens/InstaSearchScreen'
 import InstaUploadItemsScreen from '../Components/TabScreens/InstaUploadItemsScreen'
-import COLORS from '../Constant/Colours';
 
 const HomeTab = createStackNavigator(
     {
@@ -26,7 +25,7 @@ const HomeTab = createStackNavigator(
 
 const LoveTab = createStackNavigator(
     {
-        Home: InstaLoveScreen,
+        Love: InstaLoveScreen,
     },
     {
         headerMode: 'none',
@@ -35,7 +34,7 @@ const LoveTab = createStackNavigator(
 
 const ProfileTab = createStackNavigator(
     {
-        Home: InstaProfileScreen,
+        Profile: InstaProfileScreen,
     },
     {
         headerMode: 'none',
@@ -44,7 +43,7 @@ const ProfileTab = createStackNavigator(
 
 const SearchTab = createStackNavigator(
     {
-        Home: InstaSearchScreen,
+        Search: InstaSearchScreen,
     },
     {
         headerMode: 'none',
@@ -53,12 +52,18 @@ const SearchTab = createStackNavigator(
 
 const UploadTab = createStackNavigator(
     {
-        Search: InstaUploadItemsScreen ,
+        Upload: InstaUploadItemsScreen ,
     },
+
     {
         headerMode: 'none',
-    }
+        navigationOptions: ({ navigation }) => ({
+            tabBarVisible: navigation.state.routes[navigation.state.index].routeName === 'Upload' ? false : true
+        })
+    },
 );
+
+
 
 const TabNavigation = createBottomTabNavigator(
     {
@@ -71,7 +76,8 @@ const TabNavigation = createBottomTabNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({tintColor}) => {
-                const { routeName } = navigation.state;
+                const { routeName, } = navigation.state;
+                let tabbarvisible = true;
                 if (routeName === 'Home') {
                     return (
                         <HomeIcon name="home" size={25} color={tintColor} />
@@ -82,7 +88,7 @@ const TabNavigation = createBottomTabNavigator(
                     );
                 } else if (routeName === 'Upload') {
                     return (
-                        <PlusIcon name="plussquareo" size={25} color={tintColor} />
+                        <PlusIcon name="plussquareo" size={25} color={tintColor}/>
                     );
                 } else if (routeName === 'Love') {
                     return (
@@ -93,7 +99,7 @@ const TabNavigation = createBottomTabNavigator(
                         <ProfileIcon name="user" size={25} color={tintColor} />
                     );
                 }
-            },
+            }
         }),
         tabBarOptions: { showLabel: false, activeTintColor:'darkblack',}
 });
