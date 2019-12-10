@@ -41,6 +41,8 @@ target 'MyFirstApp' do
 
   pod 'react-native-login-twitter', :path => '../node_modules/react-native-login-twitter'
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
   target 'MyFirstAppTests' do
     inherit! :search_paths
     # Pods for testing
